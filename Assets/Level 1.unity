@@ -175,11 +175,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4d3b4576cc1e134887cb15b0d208a7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xSpeed: 20
-  ySpeed: 10
+  xSpeed: 15
+  ySpeed: 15
   xRange: 5
-  yMinRange: -2.5
-  yMaxRange: 2
+  yMinRange: -3.5
+  yMaxRange: 3
+  positionPitchFactor: -5
+  controlPitchFactor: -20
+  positionYawFactor: 5
+  controlRollFactor: -20
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
@@ -285,15 +289,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000012575093128, guid: d39401e2891b1e4439d7839a3a24b3f6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.0000029206276
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4000012575093128, guid: d39401e2891b1e4439d7839a3a24b3f6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.1499951
+      value: -1.53
       objectReference: {fileID: 0}
     - target: {fileID: 4000012575093128, guid: d39401e2891b1e4439d7839a3a24b3f6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.4199986
+      value: 6.29
       objectReference: {fileID: 0}
     - target: {fileID: 4000012575093128, guid: d39401e2891b1e4439d7839a3a24b3f6, type: 3}
       propertyPath: m_LocalRotation.x
