@@ -1,47 +1,54 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using UnityEditor.UIElements;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
-public class PlayerShip : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
-    [Tooltip("In ms^-1")] [SerializeField] float xSpeed = 15f;
-    [Tooltip("In ms^-1")] [SerializeField] float ySpeed = 15f;
+    [Header("General")]
+    [Tooltip("In ms^-1")] [SerializeField] float xControlSpeed = 15f;
+    [Tooltip("In ms^-1")] [SerializeField] float yControlSpeed = 15f;
     [Tooltip("In m")] [SerializeField] float xRange = 5f;
     [Tooltip("In m")] [SerializeField] float yMinRange = -3f;
     [Tooltip("In m")] [SerializeField] float yMaxRange = 3f;
 
+    [Header("Sceen-position Based")]
     [SerializeField] float positionPitchFactor = -5f;
-    [SerializeField] float controlPitchFactor = -20f;
     [SerializeField] float positionYawFactor = 5f;
+
+    [Header("Control-throw Based")]
+    [SerializeField] float controlPitchFactor = -20f;
     [SerializeField] float controlRollFactor = -20f;
 
 
     float xThrow, yThrow;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    bool isControlEnabled = true;
 
     // Update is called once per frame
     void Update()
     {
+        if(!isControlEnabled) { return; }
         ApplyThrowMovement();
         ApplyRotation();
+    }
+
+    //called by String message in CollisionHandler
+    void OnPlayerDeath()
+    {
+        isControlEnabled = false;
     }
 
     private void ApplyThrowMovement()
     {
         xThrow = CrossPlatformInputManager.GetAxis("Horizontal");
-        float xOffset = xThrow * xSpeed * Time.deltaTime; //in frame, if delta(the change) is longer, we need to move further
+        float xOffset = xThrow * xControlSpeed * Time.deltaTime; //in frame, if delta(the change) is longer, we need to move further
         float rawNewXPos = transform.localPosition.x + xOffset;
 
         yThrow = CrossPlatformInputManager.GetAxis("Vertical");
-        float yOffset = yThrow * ySpeed * Time.deltaTime;
+        float yOffset = yThrow * yControlSpeed * Time.deltaTime;
         float rawNewYPos = transform.localPosition.y + yOffset;
 
         transform.localPosition = new Vector3(Mathf.Clamp(rawNewXPos, -xRange, xRange),
