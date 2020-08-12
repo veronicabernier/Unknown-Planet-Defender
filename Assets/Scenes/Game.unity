@@ -171,6 +171,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 410311676}
     m_Modifications:
+    - target: {fileID: 80589841, guid: d39401e2891b1e4439d7839a3a24b3f6, type: 3}
+      propertyPath: guns.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 80589841, guid: d39401e2891b1e4439d7839a3a24b3f6, type: 3}
+      propertyPath: guns.Array.data[0]
+      value: 
+      objectReference: {fileID: 1431228086}
+    - target: {fileID: 80589841, guid: d39401e2891b1e4439d7839a3a24b3f6, type: 3}
+      propertyPath: guns.Array.data[1]
+      value: 
+      objectReference: {fileID: 368912041}
+    - target: {fileID: 1438918771, guid: d39401e2891b1e4439d7839a3a24b3f6, type: 3}
+      propertyPath: m_Name
+      value: Gun (right)
+      objectReference: {fileID: 0}
     - target: {fileID: 1000013828802630, guid: d39401e2891b1e4439d7839a3a24b3f6, type: 3}
       propertyPath: m_Name
       value: Player Ship
@@ -218,6 +234,11 @@ PrefabInstance:
     - target: {fileID: 4000012575093128, guid: d39401e2891b1e4439d7839a3a24b3f6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3608864229501307441, guid: d39401e2891b1e4439d7839a3a24b3f6,
+        type: 3}
+      propertyPath: m_Name
+      value: Gun (left)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d39401e2891b1e4439d7839a3a24b3f6, type: 3}
@@ -282,6 +303,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &368912041 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3608864229501307441, guid: d39401e2891b1e4439d7839a3a24b3f6,
+    type: 3}
+  m_PrefabInstance: {fileID: 189364904}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &410311673
 GameObject:
   m_ObjectHideFlags: 0
@@ -971,6 +998,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4192681528727280, guid: 6a7580c2fbbc4fe41947b58d9f7d3f2b,
     type: 3}
   m_PrefabInstance: {fileID: 1223696455}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1431228086 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1438918771, guid: d39401e2891b1e4439d7839a3a24b3f6,
+    type: 3}
+  m_PrefabInstance: {fileID: 189364904}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1506787923
 GameObject:
